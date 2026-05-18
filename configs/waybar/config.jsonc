@@ -1,0 +1,152 @@
+{
+    "layer": "top", 
+    "position": "top", 
+    "width":  1370,
+    "hight":  20, 
+    "modules-left": ["custom/appmenu", "dwl/tags"],
+    "modules-center": ["clock", "custom/weather"],
+    "modules-right": ["custom/player", "pulseaudio", "battery", "tray", "cpu", "memory",  "custom/notification", "custom/power"],
+    "dwl/tags": {
+        "format": "{name}",
+        "on-click": "activate",
+        "num-tags": 11
+    },
+  
+    "tray": {
+        "icon-size": 21,
+        "spacing": 10
+    },
+    "custom/appmenu": {
+    	"tooltip": true,
+	"tooltip-format": "App Launcher",
+	"on-click": "rofi -show drun -theme ~/.config/dwl/scripts/sleek-dark.rasi",
+	"format": ""
+    },
+    
+    "clock": {
+        "interval": 1,
+        "tooltip-format": "<big>{:%b %d}</big>\n<tt><small>{calendar}</small></tt>",
+        "format": "{:%b %d %H:%M:%S %p}",
+        "format-alt": "{:%Y-%m-%d}",
+        "calendar": {
+        "mode": "month",
+        "mode-mon-col": 3,
+        "week-pos": "right",
+        "on-scroll": 1,
+        "format": {
+        "months":     "<span><b>{}</b></span>",
+        "days":       "<span><b>{}</b></span>",
+        "weeks":      "<span><b>W{}</b></span>",
+        "weekdays":   "<span><b>{}</b></span>",
+        "today":      "<span><b><u>{}</u></b></span>"
+            }
+        },
+        "actions":  {
+        "on-click-right": "mode",
+        "on-scroll-up": "tz_up",
+        "on-scroll-down": "tz_down",
+        "on-scroll-up": "shift_up",
+        "on-scroll-down": "shift_down"
+        }
+    },
+
+    "battery": {
+        "states": {
+	"good": 95,
+        "warning": 30,
+        "critical": 20
+        },
+        "on-click-middle": "xfce-terminal acpi -i",
+        "format": "{icon}  {capacity}%",
+        "format-full": "{icon}  {capacity}%",
+        "format-charging": "  {capacity}%",
+        "format-plugged": "  {capacity}%",
+        "format-alt": "{time}  {icon}",
+        "format-icons": ["", "", "", "", ""]        
+    },
+
+    "pulseaudio": {
+        "scroll-step": 1, 
+        "format": "{icon} {volume}%",
+        "format-muted": "",
+        "format-icons": {
+        "default": ["  ", "  ", "   "]
+        },
+        "on-click": "pavucontrol"
+    },
+
+    "custom/notification": {
+        "tooltip": false,
+        "format": "{icon} ",
+        "format-icons": {
+        "notification": "<span foreground='red'><sup><small></small></sup></span>",
+        "none": "",
+        "dnd-notification": "<span foreground='red'><sup><small></small></sup></span>",
+        "dnd-none": "",
+        "inhibited-notification": "<span foreground='red'><sup><small></small></sup></span>",
+        "inhibited-none": "",
+        "dnd-inhibited-notification": "<span foreground='red'><sup><small></small></sup></span>",
+        "dnd-inhibited-none": ""
+        },
+        "return-type": "json",
+        "exec-if": "which swaync-client",
+        "exec": "swaync-client -swb",
+        "on-click": "swaync-client -t -sw",
+        "on-click-right": "swaync-client -d -sw",
+        "escape": true
+    },
+
+    "custom/player": {
+        "format": "🎵 {}",
+        "exec": "~/.config/waybar/scripts/player.sh",
+        "interval": 3,
+        "max-length": 25,
+        "tooltip": true,
+        "return-type": "text",
+        "markup": false
+    },
+    
+    "temperature": {
+        "tooltip": true,
+        "thermal-zone": 2,
+        "hwmon-path": "/sys/class/hwmon/hwmon1/temp1_input",
+        "critical-threshold": 80,
+        "format-critical": " {temperatureC}°C",
+        "format": " {temperatureC}°C",
+        "on-click": "lxterminal -e bash -c 'sensors; exec bash'"
+   },
+
+
+    "custom/weather": {
+       "exec": "~/.config/waybar/scripts/weather.py",
+       "return-type": "json",
+       "tooltip": true
+},
+
+   "cpu": {
+       "format": "　{usage}%"
+    },
+   "memory": {
+       "format": "　{}%"
+    },
+
+    "custom/power": {
+       "format": " ⏻ ",
+       "on-click": "~/.config/dwl/scripts/rofi_powermenu",
+       "tooltip": false
+  }, 
+
+    "custom/pacman": {
+       "format": "{}{icon}",
+       "on-click": "lxterminal -e sh -c 'sudo pacman -Syu; trizen -Syua; exec bash'",
+       "return-type": "json",
+       "format-icons": {
+       "pending-updates": "  ",
+       "updated": " "
+    },
+       "exec-if": "which waybar-updates",
+       "exec": "waybar-updates"
+
+
+    }
+}

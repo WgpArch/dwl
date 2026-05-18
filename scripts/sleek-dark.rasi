@@ -1,0 +1,144 @@
+*{
+  /* Transparent background with white text */
+  background-color: transparent;
+  text-color: rgba(255, 255, 255, 0.95);
+}
+
+window {
+  padding: 1em;
+  border-color: rgba(255, 255, 255, 0.2);
+  border: 1px;
+  border-radius: 12px;
+  background-color: rgba(255, 255, 255, 0.08);
+}
+
+mainbox {
+  spacing: 0px;
+  children: [inputbar, wrapper-mode-switcher, listview];
+}
+
+element {
+  background: transparent;
+  children: [element-icon, element-text];
+}
+
+element, element-text, element-icon, button {
+  cursor: pointer;
+}
+
+inputbar {
+  margin: 0px 0px 0.5em 0em;
+  spacing: 0.4em;
+  children: [button-iggy1, entry, overlay, case-indicator, button-iggy2];
+}
+
+button-iggy1, button-iggy2 {
+  expand: false;
+  content: "[paste]";
+  action: "kb-primary-paste";
+  horizontal-align: 0.5;
+}
+
+button-iggy2 {
+  content: "[screenshot]";
+  action: "kb-screenshot";
+}
+
+listview, inputbar, message {
+  padding: 0.5em;
+  border-radius: 8px;
+  expand: false;
+  background-color: rgba(255, 255, 255, 0.06);
+  columns: 4;
+  lines: 4;
+}
+
+listview {
+  padding: 8px;
+  margin: 16px 0 0 0;
+  border-radius: 8px;
+  dynamic: true;
+  cycle: true;
+  fixed-columns: true;
+  fixed-height: true;
+  flow: horizontal;
+}
+
+element {
+  border: 0;
+  padding: 10px;
+  font: "Z003 10";
+  orientation: vertical;
+}
+
+element-icon {
+  size: 2em;
+}
+
+element selected {
+  border-radius: 8px;
+  background-color: rgba(255, 255, 255, 0.2);
+  text-color: white;
+}
+
+element-text, element-icon {
+  font: inherit;
+  horizontal-align: 0.5;
+}
+
+wrapper-mode-switcher {
+  orientation: horizontal;
+  background-color: rgba(255, 255, 255, 0.06);
+  padding: 8px;
+  border-radius: 8px;
+  expand: false;
+  spacing: 0;
+  children: [icon-ms-ic1, mode-switcher, icon-ms-ic2];
+}
+
+icon-ms-ic1, icon-ms-ic2 {
+  size: 16;
+  vertical-align: 0.5;
+  expand: false;
+  padding: 8px;
+  border-radius: 6px;
+  text-color: rgba(255, 255, 255, 0.9);
+  background-color: rgba(255, 255, 255, 0.12);
+  cursor: pointer;
+}
+
+icon-ms-ic1 {
+  margin: 0 16px 0 0;
+}
+
+icon-ms-ic2 {
+  margin: 0 0 0 16px;
+}
+
+mode-switcher {
+  border: 0px;
+  spacing: 0px;
+  expand: true;
+}
+
+button {
+  text-color: rgba(255, 255, 255, 0.9);
+  border: 0px 0px 2px;
+  border-color: rgba(255, 255, 255, 0.1);
+  border-radius: 6px;
+  padding: 16px;
+  horizontal-align: 0.5;
+}
+
+button selected . normal {
+  text-color: white;
+  margin: 0px;
+  padding: 0px;
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+entry {
+  placeholder: "Search open window";
+  placeholder-color: rgba(255, 255, 255, 0.5);
+  text-color: rgba(255, 255, 255, 0.95);
+}

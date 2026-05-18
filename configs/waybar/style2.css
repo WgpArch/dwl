@@ -1,0 +1,255 @@
+/* Import Catppuccin Macchiato colors */
+@import "macchiato.css";
+
+/* =============================================================================
+ * Base styles
+ * =========================================================================== */
+
+* {
+  border: none;
+  border-radius: 0;
+  font-family: "Z003", system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-size: 14px;
+  min-height: 0;
+  margin: 0;
+  padding: 0;
+}
+
+/* Main waybar window - fully transparent */
+window#waybar {
+  background-color: rgba(0, 0, 0, 0);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 12px;
+  margin: 8px 12px;
+}
+
+/* =============================================================================
+ * DWL Tags (Workspaces)
+ * =========================================================================== */
+
+#tags {
+  background-color: rgba(255, 255, 255, 0.08);
+  border-radius: 10px;
+  padding: 4px 8px;
+  margin: 6px 8px 6px 12px;
+}
+
+#tags button {
+  color: rgba(255, 255, 255, 0.9);
+  background-color: transparent;
+  border-radius: 8px;
+  padding: 4px 10px;
+  margin: 0 2px;
+  transition: all 0.2s ease;
+}
+
+#tags button:hover {
+  background-color: rgba(255, 255, 255, 0.15);
+  color: white;
+}
+
+#tags button.occupied {
+  color: rgba(255, 255, 255, 1);
+  background-color: rgba(255, 255, 255, 0.12);
+}
+
+#tags button.focused {
+  color: white;
+  background-color: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 0 8px rgba(255, 255, 255, 0.3);
+}
+
+#tags button.urgent {
+  color: #f5a97f;
+  background-color: rgba(245, 169, 127, 0.2);
+}
+
+/* =============================================================================
+ * General Module Styling
+ * =========================================================================== */
+
+#clock,
+#battery,
+#cpu,
+#memory,
+#temperature,
+#backlight,
+#network,
+#pulseaudio,
+#tray,
+#custom-power,
+#custom-appmenu,
+#custom-music,
+#custom-weather,
+#custom-player,   
+#custom-notification {
+  color: rgba(255, 255, 255, 0.95);
+  background-color: rgba(255, 255, 255, 0.08);
+  border-radius: 10px;
+  padding: 6px 12px;
+  margin: 6px 4px;
+  transition: all 0.2s ease;
+}
+
+#clock:hover,
+#battery:hover,
+#cpu:hover,
+#memory:hover,
+#temperature:hover,
+#backlight:hover,
+#network:hover,
+#pulseaudio:hover,
+#tray:hover,
+#custom-power:hover,
+#custom-appmenu:hover,
+#custom-music:hover,
+#custom-weather:hover,
+#custom-player:hover,  
+#custom-notification:hover {
+  background-color: rgba(255, 255, 255, 0.15);
+  color: white;
+}
+
+/* =============================================================================
+ * Individual Module Colors
+ * =========================================================================== */
+
+#clock {
+  color: white;
+  margin: 6px 12px;
+}
+
+#battery {
+  color: white;
+}
+
+#battery.charging {
+  color: white;
+}
+
+#battery.critical:not(.charging) {
+  color: white;
+  animation: blink 1s infinite;
+}
+
+#cpu {
+  color: white;
+}
+
+#memory {
+  color: white;
+}
+
+#temperature {
+  color: white;
+}
+
+#temperature.critical {
+  color: red;
+}
+
+#network {
+  color: white;
+}
+
+#network.disconnected {
+  color: #ed8796;
+}
+
+#pulseaudio {
+  color: white;
+}
+
+#pulseaudio.muted {
+  color: #6e738d;
+}
+
+#tray {
+  margin: 6px 10px;
+  padding: 4px 8px;
+}
+
+#custom-appmenu {
+  font-size: 18px;
+  color: white;
+  padding: 6px 14px;
+  margin: 6px 0 6px 12px;
+}
+
+#custom-player {
+  color: #b7bdf8; 
+  font-weight: bold;
+}
+
+#custom-notification {
+  color: rgba(255, 255, 255, 0.95);
+  font-size: 16px; 
+  padding: 6px 10px;
+}
+
+#custom-notification span {
+  font-size: 10px;
+}
+
+#custom-power {
+  font-size: 18px;
+  color: #ed8796;
+  padding: 6px 12px;
+  margin: 6px 12px 6px 4px;
+}
+
+#custom-power:hover {
+  background-color: rgba(237, 135, 150, 0.3);
+}
+
+#custom-weather {
+  color: white;
+}
+
+/* =============================================================================
+ * Animations
+ * =========================================================================== */
+
+@keyframes blink {
+  0% { opacity: 1; }
+  50% { opacity: 0.3; }
+  100% { opacity: 1; }
+}
+
+/* =============================================================================
+ * Tooltips
+ * =========================================================================== */
+
+tooltip {
+  background-color: rgba(30, 30, 46, 0.95);
+  color: white;
+  border-radius: 8px;
+  padding: 8px 12px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* =============================================================================
+ * Tooltips (Weather Dropdown, etc.)
+ * =========================================================================== */
+
+tooltip {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: rgba(255, 255, 255, 0.95);
+  border-radius: 10px;
+  padding: 10px 14px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+tooltip label {
+  color: rgba(255, 255, 255, 0.95);
+  font-size: 13px;
+}
+
+tooltip > box {
+  background-color: transparent;
+}
+
+tooltip > box > label {
+  color: rgba(255, 255, 255, 0.95);
+}
