@@ -1,5 +1,7 @@
 # dwl Dotfiles & Source
 
+![dwl Screenshot](screenshot_2026-05-18_18-15-06.jpg)
+
 <div align="center">
 
 ![Arch Linux](https://img.shields.io/badge/Arch_Linux-1793D1?style=for-the-badge&logo=arch-linux&logoColor=white)
