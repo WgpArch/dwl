@@ -71,3 +71,5 @@ Protocols: wlroots, wayland-protocols
 Icons: Font Awesome
 
 
+
+## 📸 Screenshot
