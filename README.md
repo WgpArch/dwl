@@ -70,8 +70,10 @@ dwl: dwl community
 Protocols: wlroots, wayland-protocols
 Icons: Font Awesome
 
-
-
-## 📸 Screenshot
-
 ## 📸 Screenshots
+
+![Screenshot 1](screenshot_2026-05-24_17-44-06.jpg)
+![Screenshot 2](screenshot_2026-05-24_17-44-16.jpg)
+![Screenshot 3](screenshot_2026-05-24_17-44-22.jpg)
+![Screenshot 4](screenshot_2026-05-24_17-44-29.jpg)
+![Screenshot 5](screenshot_2026-05-24_17-44-34.jpg)
