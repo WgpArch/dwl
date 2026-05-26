@@ -2,7 +2,7 @@
 
 <div align="center">
 
-[![View Documentation](https://img.shields.io/badge/View-Documentation-blue?style=for-the-badge)](https://wgparch.github.io/dwl/)
+[![View Documentation](https://img.shields.io/badge/View-Documentation-blue?style=for-the-badge)](https://wgparch.codeberg.page/dwl/)
 
 ![Arch Linux](https://img.shields.io/badge/Arch_Linux-1793D1?style=for-the-badge&logo=arch-linux&logoColor=white)
 ![Wayland](https://img.shields.io/badge/Wayland-Compositor-2F80ED?style=for-the-badge)
@@ -24,7 +24,7 @@
 
 ## 📖 Documentation & Installation
 
-For full instructions on how to patch and build dwl, configure Waybar, and use the keybinds, please visit the **[Official Documentation Website](https://wgparch.github.io/dwl/)**.
+For full instructions on how to patch and build dwl, configure Waybar, and use the keybinds, please visit the **[Official Documentation Website](https://wgparch.codeberg.page/dwl/)**.
 
 ## 📸 Screenshots
 
