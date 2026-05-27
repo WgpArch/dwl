@@ -1,0 +1,18 @@
+site_name: WgpArch dwl Config
+site_url: https://wgparch.github.io/dwl/
+theme:
+  name: material
+  palette:
+    primary: blue grey
+    accent: light blue
+  features:
+    - navigation.tabs
+    - navigation.expand
+nav:
+  - Home: index.md
+  - Patching & Building: patching.md
+  - Installation: installation.md
+  - Keybinds: keybinds.md
+  - Waybar & Scripts: waybar.md
+  - Look & Feel: theming.md
+  - Gallery: gallery.md
