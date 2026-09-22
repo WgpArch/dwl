@@ -1,5 +1,5 @@
 site_name: WgpArch dwl Config
-site_url: https://wgparch.github.io/dwl/
+site_url: https://wgparch.codeberg.page/dwl/
 theme:
   name: material
   palette:
