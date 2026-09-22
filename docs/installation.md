@@ -7,7 +7,7 @@ To bypass this, we use a custom `PKGBUILD` that correctly copies your pre-patche
 ## Prerequisites
 
 **Core:**
-- `wlroots-git` (or `wlroots0.19`)
+- `wlroots-git` (or `wlroots0.20`)
 - `wayland-protocols`
 - `xorg-xwayland` (Optional, for X11 apps)
 
