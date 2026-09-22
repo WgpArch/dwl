@@ -1,3 +1,11 @@
+
+#ifndef XDG_TOPLEVEL_CONFIGURE_BOUNDS_SINCE_VERSION
+#define XDG_TOPLEVEL_CONFIGURE_BOUNDS_SINCE_VERSION 5
+#endif
+#ifndef XDG_TOPLEVEL_WM_CAPABILITIES_SINCE_VERSION
+#define XDG_TOPLEVEL_WM_CAPABILITIES_SINCE_VERSION 6
+#endif
+
 /*
  * See LICENSE file for copyright and license details.
  */
@@ -70,6 +78,7 @@
 
 #include "dwl-ipc-unstable-v2-protocol.h"
 #include "util.h"
+#include "xdg-shell-protocol.h"
 
 /* macros */
 #define MAX(A, B)               ((A) > (B) ? (A) : (B))
@@ -3407,10 +3416,11 @@ xwaylandready(struct wl_listener *listener, void *data)
 
 	/* Set the default XWayland cursor to match the rest of dwl. */
 	if ((xcursor = wlr_xcursor_manager_get_xcursor(cursor_mgr, "default", 1)))
-		wlr_xwayland_set_cursor(xwayland,
-				xcursor->images[0]->buffer, xcursor->images[0]->width * 4,
-				xcursor->images[0]->width, xcursor->images[0]->height,
-				xcursor->images[0]->hotspot_x, xcursor->images[0]->hotspot_y);
+// DISABLED-0.20 		wlr_xwayland_set_cursor(xwayland,
+// DISABLED-0.20 				xcursor->images[0]->buffer, xcursor->images[0]->width * 4,
+// DISABLED-0.20 				xcursor->images[0]->width, xcursor->images[0]->height,
+// DISABLED-0.20 				xcursor->images[0]->hotspot_x, xcursor->images[0]->hotspot_y);
+; // DISABLED-0.20 null statement keeps the if() valid
 }
 #endif
 
